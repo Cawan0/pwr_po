@@ -4,28 +4,32 @@
 
 using namespace std;
 
+typedef unsigned long long int ull;
+
 class Sito{
 public:
     void Odsiej(){
-        for(int i=2;i*i<=numbers.size();i++){
+        for(ull i=2;i*i<=numbers.size();i++){
             for(int j=i*i;j<=numbers.size();j+=i)
             numbers[j-1]=false;
         }
     };
     void Wyswietl(){
-        for(int i=0;i<this->numbers.size();i++){
+        for(ull i=0;i<this->numbers.size();i++){
             if(numbers[i])
             cout<<i+1<<" "<<endl;
         }
     };
-    bool Sprawdz(int x){
+    bool Sprawdz(ull x){
         return this->numbers[x-1];
 
     };
-    Sito(int range){
-        for(int i=0;i<range;i++){
-            this->numbers.push_back(true);
-        }
+    Sito(ull range){
+        // for(ull i=0;i<range;i++){
+        //     this->numbers.push_back(true);
+        // }
+        this->numbers.resize(range);
+        fill(numbers.begin(),numbers.end(),true);
         this->numbers[0]=false;
     };
     //Nie ma po co tego robic chyba
@@ -35,6 +39,7 @@ public:
     //   }
     // }
 private:
+  //const ull N;
     vector<bool> numbers;
 };
 
@@ -42,8 +47,8 @@ private:
 
 int main()
 {
-    int range;
-    int menu,numberForCheck;
+    ull range;
+    ull menu,numberForCheck;
     cout<<"Zakres od 1 do ";
     cin>>range;
     Sito a(range);
