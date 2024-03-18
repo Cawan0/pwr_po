@@ -28,6 +28,12 @@ public:
         }
         this->numbers[0]=false;
     };
+    //Nie ma po co tego robic chyba
+    // ~Sito(){
+    //   for(int i=0;i<this->numbers.size();i++){
+    //     this->numbers[i]=0;
+    //   }
+    // }
 private:
     vector<bool> numbers;
 };
