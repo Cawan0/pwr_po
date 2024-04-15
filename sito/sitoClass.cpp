@@ -21,25 +21,16 @@ public:
         }
     };
     bool Sprawdz(ull x){
+        cout<<"halo"<<endl;
         return this->numbers[x-1];
 
     };
     Sito(ull range){
-        // for(ull i=0;i<range;i++){
-        //     this->numbers.push_back(true);
-        // }
         this->numbers.resize(range);
         fill(numbers.begin(),numbers.end(),true);
         this->numbers[0]=false;
     };
-    //Nie ma po co tego robic chyba
-    // ~Sito(){
-    //   for(int i=0;i<this->numbers.size();i++){
-    //     this->numbers[i]=0;
-    //   }
-    // }
 private:
-  //const ull N;
     vector<bool> numbers;
 };
 
