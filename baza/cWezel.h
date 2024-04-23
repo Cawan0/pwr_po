@@ -1,16 +1,18 @@
 #ifndef CWEZEL_H
 #define CWEZEL_H
-
+#include "cProdukt.h"
+#include <string>
 
 class cWezel
 {
     public:
-        cWezel(int liczba);
+        cWezel(cProdukt* aAdres);
         virtual ~cWezel();
         cWezel* nastepnyElement;
-        int liczba;
+        cProdukt* getAdres();
 
     private:
+        cProdukt* mAdres;
 };
 
 #endif // CWEZEL_H

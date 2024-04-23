@@ -1,6 +1,7 @@
 #include "cBaza.h"
 #include <iostream>
 #include <cstddef>
+#include <string>
 
 using namespace std;
 
@@ -14,8 +15,8 @@ cBaza::~cBaza()
     //dtor
 }
 
-cBaza::bDodaj(int liczba){
-    cWezel* nowyWezel = new cWezel(liczba);
+cBaza::bDodaj(cProdukt* aAdres){
+    cWezel* nowyWezel = new cWezel(aAdres);
     nowyWezel->nastepnyElement = this->pierwszyElement;
     this->pierwszyElement = nowyWezel;
 }
@@ -23,7 +24,9 @@ cBaza::bDodaj(int liczba){
 cBaza::bPokaz(){
     cWezel* i=this->pierwszyElement;
     while(i!=NULL){
-        cout<<i->liczba<<endl;
+            //cout<<i->getAdres()<<endl;
+            cProdukt* o = i->getAdres();
+            o->Pokaz();
         i=i->nastepnyElement;
     }
 }

@@ -7,7 +7,7 @@ class cBaza
     public:
         cBaza();
         virtual ~cBaza();
-        bDodaj(int liczba);
+        bDodaj(cProdukt* aAdres);
         bPokaz();
 
     private:
